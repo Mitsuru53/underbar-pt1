@@ -26,4 +26,13 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('returns -1 if start point is greater than array length', () => {
+    const arr = ['foo', 'bar', 'baz', 'bar', 'bar'];
+    expect(_.indexOf(arr, 'bar', 10)).toBe(-1);
+  });
+
+  it('starts searching with negative offset', () => {
+    const arr = ['foo', 'bar', 'baz', 'bar', 'bar'];
+    expect(_.indexOf(arr, 'bar', -1)).toBe(1)
+  });
 });
