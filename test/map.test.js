@@ -22,4 +22,14 @@ describe('map()', () => {
     const mappedArr = _.map(word, (char) => char);
     expect(mappedArr.length).toEqual(word.length)
   });
+  it('given empty array, returns empty array', () => {
+    const emptyArray = [];
+    const mappedArr = _.map(emptyArray, (char) => char);
+    expect(mappedArr).toEqual(mappedArr);
+  });
+  it('given empty, returns empty array', () => {
+    const emptyContent = '';
+    const mappedArr = _.map(emptyContent, (char) => char);
+    expect(mappedArr).toEqual([]);
+  })
 });
