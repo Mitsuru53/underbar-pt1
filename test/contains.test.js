@@ -30,5 +30,18 @@ describe('contains()', () => {
     };
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
-
+  it('returns true even if find target value in the array more than 1 time', () => {
+    const nums = [1, 2, 2, 3, 4];
+    expect(_.contains(nums, 2)).toBe(true);
+  });
+  it('returns true even if find target value in the obj more than 1 time', () => {
+    const ponies = {
+      'pony1': 'Fluttershy',
+      'pony2': 'Pinkie Pie',
+      'pony3': 'Rainbow Dash',
+      'pony4': 'Rarity',
+      'pony5': 'Fluttershy',
+    };
+    expect(_.contains(ponies, 'Fluttershy')).toBe(true);
+  });
 });
