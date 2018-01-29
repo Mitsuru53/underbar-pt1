@@ -39,5 +39,20 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+  it('given empty array, iterates 0 times', () => {
+    const emptyArray = [];
+    let count = 0;
+    _.each(emptyArray, function(element, index, array) {
+      count += 1;
+    });
+    expect(count).toBe(0);
+  });
+  it('given empty object, iterates 0 times', () => {
+    const emptyObj = {};
+    let count = 0;
+    _.each(emptyObj, function(element, index, array) {
+      count += 1;
+    });
+    expect(count).toBe(0);
+  });
 });
-
