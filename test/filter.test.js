@@ -23,4 +23,15 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('filters an data to empty array when exists matched element', () => {
+    const nums = [1, 3, 5];
+    expect(_.filter(nums, num => num % 2 === 0)).toEqual([]);
+    const person = {
+      name: 'wai',
+      phonetic: 'waichan'
+    };
+    const result = _.filter(person, (value) => !isNaN(value));
+    expect(result).toEqual([]);
+  });
 });
